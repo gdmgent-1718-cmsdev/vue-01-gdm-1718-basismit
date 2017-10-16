@@ -5,14 +5,19 @@
     </header>
     <main>
       <img src="./assets/logo.png" alt="Vue.js PWA">
-      <router-view></router-view>
+      <api></api>
     </main>
   </div>
 </template>
 
 <script>
+import Api from './components/Api'
+
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    Api
+  }
 }
 </script>
 

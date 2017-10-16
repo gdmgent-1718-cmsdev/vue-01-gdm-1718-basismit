@@ -1,6 +1,6 @@
 {
-  "name": "vue-01",
-  "short_name": "vue-01",
+  "name": "vue",
+  "short_name": "vue",
   "icons": [
     {
       "src": "/static/img/icons/android-chrome-192x192.png",
