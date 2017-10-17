@@ -34,7 +34,7 @@ body {
 }
 
 main {
-  text-align: center;
+  /*text-align: center;*/
   margin-top: 40px;
 }
 
@@ -56,4 +56,7 @@ header span {
   box-sizing: border-box;
   padding-top: 16px;
 }
+    img {
+        text-align:center;
+    }
 </style>

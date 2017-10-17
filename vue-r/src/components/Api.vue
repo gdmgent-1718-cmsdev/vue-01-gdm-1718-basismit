@@ -22,7 +22,7 @@
     methods: {
         postToAPI: function () {
             self = this
-            console.log(this.title);
+            console.log(this.content);
             let headers = {
                 'Accept': 'application/hal+json',
                 'Content-Type': 'application/hal+json',
@@ -30,11 +30,24 @@
                 'Authorization': 'Basic Y21zZGV2LXVzZXI6Y21zZGV2LXBhc3M=',
             }
             let data = {
-                title: self.title,
-                body: self.content
+                "_links": {
+                    "type": {
+                        "href": "http://cmsdev.localhost/rest/type/node/article"
+                    }
+                },
+                "title": {
+                    "value": self.title
+                },
+                "body": {
+                    "value": self.content
+                },
+                "type": {
+                    "target_id": "article"
+                }
             }
-            axios.post('http://cmsdev.localhost/node/', data, headers);
-
+            axios.post('http://cmsdev.localhost/node/', data, headers)
+                .then(({data: response})=> {console.log(response)})
+                .catch(error => {console.error(error.message)});
         }
     }
 }
